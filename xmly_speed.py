@@ -51,9 +51,8 @@ if "XMLY_SPEED_COOKIE" in os.environ:
 devices = []
 notify_time = 19                            # 通知时间,24小时制,默认19
 XMLY_ACCUMULATE_TIME = 1                    # 希望刷时长的,此处置1,默认打开;关闭置0
-UserAgent = "ting_1.8.42(MI+6,Android26)"
+UserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 iting/1.1.12 kdtunion_iting/1.0 iting(main)/1.1.12/ios_1"
 # 非iOS设备的需要的自行修改,自己抓包 与cookie形式类似
-
 
 
 def str2dict(str_cookie):
@@ -720,12 +719,12 @@ def saveListenTime(cookies, date_stamp):
         'uid': uid
     }
     try:
-        response = requests.post('http://mobile.ximalaya.com/pizza-category/ball/saveListenTime',
+        requests.post('http://mobile.ximalaya.com/pizza-category/ball/saveListenTime',
                       headers=headers, cookies=cookies, data=data)
     except:
         print("网络请求异常,为避免GitHub action报错,直接跳过")
         return
-    print(response.text)
+    # print(response.text)
 
 
 def listenData(cookies, date_stamp):
@@ -748,12 +747,12 @@ def listenData(cookies, date_stamp):
         'uid': uid
     }
     try:
-        response = requests.post('http://m.ximalaya.com/speed/web-earn/listen/client/data',
+        requests.post('http://m.ximalaya.com/speed/web-earn/listen/client/data',
                       headers=headers, cookies=cookies, data=json.dumps(data))
     except:
         print("网络请求异常,为避免GitHub action报错,直接跳过")
         return
-    print(response.text)
+    # print(response.text)
 
 
 def card_exchangeCoin(cookies, themeId, cardIdList, _datatime):
