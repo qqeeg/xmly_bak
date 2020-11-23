@@ -51,7 +51,7 @@ if "XMLY_SPEED_COOKIE" in os.environ:
 devices = []
 notify_time = 19                            # 通知时间,24小时制,默认19
 XMLY_ACCUMULATE_TIME = 1                    # 希望刷时长的,此处置1,默认打开;关闭置0
-UserAgent = "ting_1.8.42(MI+6,Android26)"
+UserAgent = "Mozilla/5.0 (Linux; Android 8.0.0; MI 6 Build/OPR1.170623.027; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045410 Mobile Safari/537.36&version=1.8.42"
 # 非iOS设备的需要的自行修改,自己抓包 与cookie形式类似
 
 
